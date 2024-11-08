@@ -2,7 +2,6 @@
 
 export function renderImages(images) {
     const gallery = document.getElementById('gallery');
-    gallery.innerHTML = '';
 
     images.forEach(image => {
         const imgCard = document.createElement('div');

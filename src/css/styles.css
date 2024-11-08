@@ -116,75 +116,66 @@
     width: 360px;
 }
 
-/* Loader */
-
-.loader {
+.load-btn {
     margin: auto;
     margin-top: 32px;
-    width: 64px;
-    height: 64px;
-    position: relative;
-    background: #FFF;
-    border-radius: 4px;
-    overflow: hidden; 
-}
-
-.loader:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 40px;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 125px;
     height: 40px;
-    transform: rotate(45deg) translate(30%, 40%);
-    background: #ff9371;
-    box-shadow: 32px -34px 0 5px #ff3d00;
-    animation: slide 2s infinite ease-in-out alternate;
+    background: #4e75ff;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.04em;
+    color: #fff;
+    outline: none;
+    border: 0;
 }
 
-.loader:after {
-    content: "";
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    width: 16px;
-    height: 16px;
+.load-btn:hover {
+    background: #6C8CFF;
+}
+
+/* Loader */
+
+#loader {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    margin-top: 32px;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-width: 3px;
+    border-style: dashed solid solid dotted;
+    border-color: #FF3D00 #FF3D00 transparent #FF3D00;
     border-radius: 50%;
-    background: #ff3d00;
-    transform: rotate(0deg);
-    transform-origin: 35px 145px;
-    animation: rotate 2s infinite ease-in-out;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
 }
 
-@keyframes slide {
-
-    0%,
-    100% {
-        bottom: -35px
-    }
-
-    25%,
-    75% {
-        bottom: -2px
-    }
-
-    20%,
-    80% {
-        bottom: 2px
-    }
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 20px;
+    top: 31px;
+    border: 10px solid transparent;
+    border-right-color: #FF3D00;
+    transform: rotate(-40deg);
 }
 
-@keyframes rotate {
+@keyframes rotation {
     0% {
-        transform: rotate(-15deg)
-    }
-
-    25%,
-    75% {
-        transform: rotate(0deg)
+        transform: rotate(0deg);
     }
 
     100% {
-        transform: rotate(25deg)
+        transform: rotate(360deg);
     }
 }
